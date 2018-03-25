@@ -1,0 +1,34 @@
+
+---
+version: '1'
+
+# App (Project) name
+name: Fx-SC-Test
+
+# App description
+description: Fx Testing.
+
+# license
+licenses:
+  - APACHE LICENSE, VERSION 2.
+
+# App environments
+environments:
+  - name: Stg
+    baseUrl: https://spqa.schoolcity.com
+    # app access credentials
+    auths:
+      - name: Default
+        authType: BASIC
+        username: na
+        password: na
+
+# Job profiles
+jobs:
+  - name: Stg
+    environment: Stg
+    tags:
+      - V1
+    regions: FxLabs/US_WEST_1
+    #cron: '0 30 * ? * *'
+    #issueTracker: FxLabs/Stg-GitHub-Bot

@@ -1,0 +1,25 @@
+---
+# Validates vault listings.
+
+authors:
+  - Intesar Shannan Mohammed
+
+endpoint: /cachingqa/Cache.svc/GetUserDetails
+
+auth: NONE
+
+method: POST
+
+testCases:
+  # invalid name
+  - id: 1
+    body: '{
+        "uad": "1000002"
+     }'
+
+assertions:
+  - "@StatusCode == 200"
+  - "@Response.ActiveCode == A"
+
+tags:
+  - V1
